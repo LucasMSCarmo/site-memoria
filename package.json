@@ -1,0 +1,12 @@
+{
+  "name": "site-memoria",
+  "version": "1.0.0",
+  "description": "Este repositório faz parte do meu estágio na FATEC São José dos Campos. O objetivo é reestruturar visualmente uma página do site da instituição, utilizando HTML, CSS, JavaScript e Flask. Por enquanto, o link abaixo leva a um protótipo que será validado antes da atualização da página oficial:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

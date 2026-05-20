@@ -1,0 +1,204 @@
+:root {
+  --primary-color: #005c6e;
+  --text-color: #333;
+  --link-color: #0066cc;
+  --bg-light: #f5f5f5;
+  --bg-lighter: #f0f8ff;
+  --border-accent: #003366;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 15px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 30px;
+  --spacing-xxxl: 40px;
+  --card-width: 300px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: none;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.secao {
+  background-color: var(--bg-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+}
+
+.documento,
+.entrevista,
+.catalogo {
+  background-color: var(--bg-lighter);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--border-accent);
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.card-introducao {
+  width: 1200px;
+  height: auto;
+  border: 2px solid #005c6e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.card {
+  flex: 0 0 25%;
+  min-width: 250px;
+  max-width: 350px;
+  height: auto;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+  padding-bottom: var(--spacing-xxxl);
+}
+
+.card-image-container {
+  padding: var(--spacing-sm) var(--spacing-lg) 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 240px;
+  display: block;
+  object-fit: fill;
+  border-radius: var(--border-radius);
+}
+
+.card-content {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.card-title {
+  color: var(--primary-color);
+  font-size: var(--spacing-xl);
+  border-radius: 25px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.card-text {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.saiba-mais {
+  display: block;
+  width: 90px;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 6px var(--spacing-sm);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  position: absolute;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-voltar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar:hover {
+  background-color: var(--primary-color);
+}
+
+
+.saiba-mais:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.entrevistas-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.entrevistas-container .card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .entrevistas-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .entrevistas-container {
+    grid-template-columns: 1fr;
+  }
+}
