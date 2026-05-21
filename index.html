@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de Memória FATEC</title>
+
   <link rel="stylesheet" href="statics/styles/cards.css">
   <link rel="stylesheet" href="statics/styles/information.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -37,41 +39,21 @@
       justify-content: center;
     }
 
-    ol,
-    ul {
-      margin-top: 0;
-      margin-bottom: -30px;
-    }
-
-    /* Se a largura da tela for até 470px, muda o height para 40% */
-    @media (max-width: 470px) {
-      .imagem-carrosel {
-        height: 30%;
-      }
-    }
-
-    .imagem-carrosel>img {
+    .imagem-carrosel > img {
       height: 100%;
       width: auto;
       max-width: 90%;
       object-fit: contain;
-      /* Garante que a imagem não seja cortada */
     }
 
-    .card-content>.card-text {
+    .card-content > .card-text {
       padding-inline: 5%;
-    }
-
-    a:focus,
-    a:hover {
-      text-decoration: none;
     }
 
     .carousel-indicators {
       bottom: 70px;
     }
 
-    /* Aumentar tamanho das letras no carrossel */
     .card-carousel .card-title {
       font-size: 28px;
     }
@@ -80,192 +62,38 @@
       font-size: 18px;
     }
   </style>
-
 </head>
 
 <body>
+
   <header>
     <h1 id="titulo-principal">Centro de Memória FATEC</h1>
   </header>
 
   <main>
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active" style="border: solid 1px var(--primary-color);">
-        </li>
-        <li data-target="#myCarousel" data-slide-to="1" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="2" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="3" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="4" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="5" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="6" style="border: solid 1px var(--primary-color);"></li>
-        <li data-target="#myCarousel" data-slide-to="7" style="border: solid 1px var(--primary-color);"></li>
-      </ol>
+      
+      <!-- Indicadores gerados via JS -->
+      <ol class="carousel-indicators" id="carousel-indicators"></ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox" style="height: 600px;">
+      <!-- Slides gerados via JS -->
+      <div class="carousel-inner" id="carousel-container" role="listbox" style="height: 600px;"></div>
 
-        <div class="item active">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/microfone.png" alt="Entrevistas" class="card-image" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Entrevistas</h3>
-              <p class="card-text">A trajetória dos educadores e docentes da FATEC revela histórias inspiradoras de
-                transformação. Cada relato nos convida a refletir sobre o impacto profundo e duradouro que um
-                professor pode exercer na jornada de um estudante — especialmente quando existe uma rede de apoio
-                sólida,
-                da qual os educadores da FATEC são parte essencial e ativa.</p>
-              <a href="#" class="saiba-mais" data-id="entrevistas">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/logoFatec.png" alt="Fatecs" class="card-image" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Memórias Fatec</h3>
-              <p class="card-text">As Fatecs (Faculdades de Tecnologia do Estado de São Paulo) são instituições
-                públicas de ensino superior que oferecem cursos superiores de tecnologia, com foco na formação
-                de profissionais alinhados às demandas do mercado de trabalho.</p>
-
-              <a href="#" class="saiba-mais" data-id="fatecs">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/pictures/parques-tecnologico.webp" alt="Parque Tecnológico" class="card-image"
-                loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Parque Tecnológico</h3>
-              <p class="card-text">O Parque Tecnológico é um ecossistema de inovação que promove competitividade e
-                desenvolvimento sustentável no Vale do Paraíba. A estrutura integra incubadoras de empresas, centros
-                empresariais, Arranjos Produtivos Locais, centros de desenvolvimento tecnológico, laboratórios
-                multiusuários
-                e universidades parceiras.</p>
-              <a href="#" class="saiba-mais" data-id="parque-tecnologico">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/lampada.png" alt="Eventos e Programas da Fatec" class="card-image"
-                loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Eventos e Programas da Fatec</h3>
-              <p class="card-text">A Fatec oferece projetos e competições que unem teoria e prática, como a metodologia
-                API
-                (Exclusiva da Fatec de São José dos Campos), as maratonas de programação e o Baja.
-                Também conta com um laboratório móvel, uma agência de inovação e atividades na área aeronáutica. Essas
-                ações
-                fortalecem a formação prática e inovadora dos estudantes.</p>
-              <a href="#" class="saiba-mais" data-id="eventos-programas">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/pessoasInspiram.png" alt="Nomes que Inspiram" class="card-image"
-                loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Nomes que Inspiram</h3>
-              <p class="card-text">Personalidades que marcaram a história da ciência, tecnologia e educação no Brasil,
-                como
-                César Lattes, Jessen Vidal, Paula Souza e Ozires Silva. Seus legados inspiram gerações
-                na busca por conhecimento e desenvolvimento.</p>
-              <a href="#" class="saiba-mais" data-id="nomes-inspiram">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/memoriaParticipativa.png" alt="Memória Participativa" class="card-image"
-                loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Memória Participativa</h3>
-              <p class="card-text">A memória participativa é um conceito que valoriza a participação ativa de grupos,
-                comunidades e coletivos culturais na preservação e promoção da memória social. Este site visa garantir
-                que o direito à memória seja exercido democraticamente por diversos grupos de professores, alunos e
-                funcionários. Além disso, os inventários participativos trabalham na identificação e registro do
-                patrimônio cultural e da memória social. A memória participativa é uma forma de aproximar pessoas,
-                reaproximar comunidades e fortalecer o sentimento de pertencimento e identidade.</p>
-              <a href="#" class="saiba-mais" data-id="memoria-participativa">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/pictures/FATEC 20 ANOS.png" alt="FATEC 20 anos" class="card-image" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">FATEC 20 anos - São José dos Campos</h3>
-              <p class="card-text">A FATEC São José dos Campos celebra 20 anos de história dedicados à formação
-                tecnológica e ao desenvolvimento regional. Ao longo dessas duas décadas, a instituição consolidou seu
-                papel na qualificação profissional, na inovação e na construção de oportunidades para a comunidade. Sua
-                trajetória é marcada pelo compromisso com a educação pública de qualidade e pelo fortalecimento do Vale
-                do Paraíba.</p>
-              <a href="#" class="saiba-mais" data-id="fatec-20-anos">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="item">
-          <article class="card card-carousel">
-            <div class="card-image-container imagem-carrosel">
-              <img src="statics/imgs/icones/microfone.png" alt="FATEC 20 anos" class="card-image" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Alunos do Sucesso</h3>
-              <p class="card-text">A trajetória dos educadores e docentes da FATEC revela histórias inspiradoras de
-                transformação. Cada relato nos convida a refletir sobre o impacto profundo e duradouro que um
-                professor pode exercer na jornada de um estudante — especialmente quando existe uma rede de apoio
-                sólida,
-                da qual os educadores da FATEC são parte essencial e ativa.</p>
-              <a href="#" class="saiba-mais" data-id="entrevistas-alunos">Saiba +</a>
-            </div>
-          </article>
-        </div>
-
-      </div>
-      <!-- Left and right controls -->
+      <!-- Controles -->
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="opacity: 0.2;">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
+
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="opacity: 0.2;">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+
     </div>
-
-    <section class="card-container">
-    </section>
-
-    <section id="informacoes-detalhadas" style="display: none;">
-    </section>
   </main>
 
-  <script type="module" src="statics/js/script.js"></script>
-</body>
+  <script type="module" src="statics/js/renderCarrossel.js"></script>
 
+</body>
 </html>
