@@ -1,7 +1,6 @@
 // statics/js/componentes/renderAlunos.js
 
 import { alunos } from '../dados/alunos.js';
-import { detalhesAlunos } from '../dados/detalhesAlunos.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const containerCards = document.querySelector('.entrevistas-container');
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       const alunoId = event.target.getAttribute('data-id');
-      const dadosEntrevista = detalhesAlunos[alunoId];
+      const dadosEntrevista = alunos.find(a => a.id === alunoId);
 
       if (dadosEntrevista && secaoDetalhes) {
         const temPDF = dadosEntrevista.pdf !== undefined && dadosEntrevista.pdf !== null && dadosEntrevista.pdf !== "";

@@ -1,7 +1,6 @@
 // statics/js/componentes/renderProfessores.js
 
 import { professores } from '../dados/professores.js';
-import { detalhesProfessores } from '../dados/detalhesProfessores.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const containerCards = document.querySelector('.entrevistas-container');
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       const professorId = event.target.getAttribute('data-id');
-      const dadosEntrevista = detalhesProfessores[professorId];
+      const dadosEntrevista = professores.find(p => p.id === professorId);
 
       if (dadosEntrevista && secaoDetalhes) {
         const temPDF = dadosEntrevista.pdf !== undefined && dadosEntrevista.pdf !== null && dadosEntrevista.pdf !== "";

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const indicators = document.getElementById("carousel-indicators");
 
   if (container && indicators) {
-    indicators.innerHTML = carrossel.map((item, index) => `
+    indicators.innerHTML = Object.keys(carrossel).map((key, index) => `
       <li
         data-target="#myCarousel"
         data-slide-to="${index}"
@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ></li>
     `).join('');
 
-    container.innerHTML = carrossel.map((item, index) => `
-      <div class="item ${index === 0 ? 'active' : ''}">
+    container.innerHTML = Object.keys(carrossel).map((key, index) => {
+      const item = carrossel[key];
+      return `
+        <div class="item ${index === 0 ? 'active' : ''}">
         <article class="card card-carousel">
           <div class="card-image-container imagem-carrosel">
             <img
@@ -28,10 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-content">
             <h3 class="card-title">${item.titulo}</h3>
             <p class="card-text">${item.descricao}</p>
-            ${item.link ? `<a href="templates/${item.link}" class="saiba-mais">Saiba +</a>` : `<a href="#" class="saiba-mais" data-id="${item.id}">Saiba +</a>`}
+            ${item.link ? `<a href="${item.link}" class="saiba-mais">Saiba +</a>` : `<a href="#" class="saiba-mais" data-id="${key}">Saiba +</a>`}
           </div>
         </article>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 });

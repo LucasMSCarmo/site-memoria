@@ -39,14 +39,14 @@
       justify-content: center;
     }
 
-    .imagem-carrosel > img {
+    .imagem-carrosel>img {
       height: 100%;
       width: auto;
       max-width: 90%;
       object-fit: contain;
     }
 
-    .card-content > .card-text {
+    .card-content>.card-text {
       padding-inline: 5%;
     }
 
@@ -72,14 +72,11 @@
 
   <main>
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-      
-      <!-- Indicadores gerados via JS -->
+
       <ol class="carousel-indicators" id="carousel-indicators"></ol>
 
-      <!-- Slides gerados via JS -->
       <div class="carousel-inner" id="carousel-container" role="listbox" style="height: 600px;"></div>
 
-      <!-- Controles -->
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="opacity: 0.2;">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -91,9 +88,13 @@
       </a>
 
     </div>
+
+    <section id="informacoes-detalhadas" style="display: none;"></section>
   </main>
 
   <script type="module" src="statics/js/renderCarrossel.js"></script>
+  <script type="module" src="statics/js/renderConteudo.js"></script>
 
 </body>
+
 </html>
